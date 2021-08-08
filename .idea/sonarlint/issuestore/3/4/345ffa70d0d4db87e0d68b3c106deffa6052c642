@@ -1,0 +1,28 @@
+
+ 
+java:S1319
+"„The type of the "cacheMap" object should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(£—ûÓøÿÿÿÿ
+
+java:S1319"The return type of this method should be an interface such as "ConcurrentMap" rather than the implementation "ConcurrentHashMap".(ûË–’şÿÿÿÿ
+I
+java:S1444
+".Make this "public static cacheMap" field final(£—ûÓøÿÿÿÿ
+J
+java:S3740"/Provide the parametrized type for this generic.(ûË–’şÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó¹Ìøşÿÿÿÿ
+k	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ›š—ùÿÿÿÿ
+k	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ›š—ùÿÿÿÿ
+k	java:S117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö˜±Êùÿÿÿÿ
+o
+java:S1104
+"TMake cacheMap a static final constant or non-public and provide accessors if needed.(£—ûÓøÿÿÿÿ
+r
+java:S3077
+"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(£—ûÓøÿÿÿÿ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(îĞÎ†ıÿÿÿÿ
+`
+java:S1124
+"EReorder the modifiers to comply with the Java Language Specification.(£—ûÓøÿÿÿÿ
+9
+java:S2386"#Make member "cacheMap" "protected".(Ü—ª„

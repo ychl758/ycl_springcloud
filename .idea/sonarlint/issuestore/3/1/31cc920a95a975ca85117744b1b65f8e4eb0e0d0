@@ -1,0 +1,35 @@
+
+X
+java:S3416$"6Update this logger to use "GatewayOperationDao.class".(±“¸Éúÿÿÿÿ8Ò¹ÔÈ±/
+2
+java:S3457>"Not enough arguments.(ËôúŠ8×¹ÔÈ±/
+2
+java:S3457U"Not enough arguments.(õ»ˆÈ8Ù¹ÔÈ±/
+u
+java:S1602f"SRemove useless curly braces around statement and then remove useless return keyword(Íş¶üÿÿÿÿ8Ú¹ÔÈ±/
+L
+java:S1611h"/Remove the parentheses around the "t" parameter(›§§‹8Û¹ÔÈ±/
+m
+java:S1612h"PReplace this lambda with method reference 'NotFoundException.class::isInstance'.(›§§‹8Û¹ÔÈ±/
+p
+java:S1602h"SRemove useless curly braces around statement and then remove useless return keyword(›§§‹8Û¹ÔÈ±/
+L
+java:S1611j"/Remove the parentheses around the "t" parameter(‰²áò8Û¹ÔÈ±/
+p
+java:S1602j"SRemove useless curly braces around statement and then remove useless return keyword(‰²áò8Ü¹ÔÈ±/
+J
+java:S3599˜",Use another way to initialize this instance.(«Â»ø8à¹ÔÈ±/
+w
+java:S1171˜"YMove the contents of this initializer to a standard constructor or to field initializers.(«Â»ø8á¹ÔÈ±/
+q
+java:S1602"SRemove useless curly braces around statement and then remove useless return keyword(³×ï8â¹ÔÈ±/
+O
+java:S3599Ÿ",Use another way to initialize this instance.(÷Ïÿ¥ûÿÿÿÿ8ã¹ÔÈ±/
+|
+java:S1171Ÿ"YMove the contents of this initializer to a standard constructor or to field initializers.(÷Ïÿ¥ûÿÿÿÿ8ã¹ÔÈ±/
+v
+java:S1602¨"SRemove useless curly braces around statement and then remove useless return keyword(Öæ®úÿÿÿÿ8æ¹ÔÈ±/
+I
+java:S3599©",Use another way to initialize this instance.(æ–*8æ¹ÔÈ±/
+v
+java:S1171©"YMove the contents of this initializer to a standard constructor or to field initializers.(æ–*8ç¹ÔÈ±/

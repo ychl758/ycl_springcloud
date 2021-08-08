@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ycl.gateway.dao.GatewayRouteDao">
+
+    <resultMap type="com.ycl.gateway.bean.GatewayBean" id="GatewayRouteMap">
+        <result property="routeId" column="route_id" jdbcType="VARCHAR"/>
+        <result property="routeUrl" column="route_url" jdbcType="VARCHAR"/>
+        <result property="routeOrder" column="route_order" jdbcType="INTEGER"/>
+        <result property="isEbl" column="is_ebl" jdbcType="INTEGER"/>
+        <result property="isDel" column="is_del" jdbcType="INTEGER"/>
+        <result property="predicates" column="predicates" jdbcType="VARCHAR"/>
+        <result property="filters" column="filters" jdbcType="VARCHAR"/>
+        <result property="routeAuthor" column="route_author" jdbcType="VARCHAR"/>
+        <result property="routeName" column="route_name" jdbcType="VARCHAR"/>
+        <result property="nodeId" column="node_id" jdbcType="VARCHAR"/>
+        <result property="nodeName" column="node_name" jdbcType="VARCHAR"/>
+        <result property="parentNodeId" column="parent_node_id" jdbcType="VARCHAR"/>
+        <result property="orderNum" column="order_num" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+
+    <!-- 所有字段的sql片段 -->
+    <sql id="allItems">
+      route_id,route_url,route_order,is_ebl,is_del,predicates,filters,route_author,route_name,node_id,node_name,parent_node_id,order_num,create_time,update_time
+     </sql>
+
+    <!--查询所有有效的路由信息-->
+    <select id="queryAllEblRoutes" resultMap="GatewayRouteMap">
+        select
+        <include refid="allItems"/>
+        from gateway.gateway_route where is_ebl =1 and is_del =1
+    </select>
+
+    <!--新增路由信息-->
+    <insert id="insertGateway" parameterType="com.ycl.gateway.bean.GatewayBean">
+     insert into  gateway.gateway_route(route_id,route_url,route_order,is_ebl,is_del,predicates,filters,route_author,route_name,node_id,node_name,parent_node_id,order_num,create_time,update_time)
+     values(
+           #{routeId,jdbcType=VARCHAR},
+           #{routeUrl,jdbcType=VARCHAR},
+           #{routeOrder,jdbcType=INTEGER},
+           #{isEbl,jdbcType=INTEGER},
+           #{isDel,jdbcType=INTEGER},
+           #{predicates,jdbcType=VARCHAR},
+           #{filters,jdbcType=VARCHAR},
+           #{routeAuthor,jdbcType=VARCHAR},
+           #{routeName,jdbcType=VARCHAR},
+           #{nodeId,jdbcType=VARCHAR},
+           #{nodeName,jdbcType=VARCHAR},
+           #{parentNodeId,jdbcType=VARCHAR},
+           #{orderNum,jdbcType=INTEGER},
+           #{createTime,jdbcType=TIMESTAMP},
+           #{updateTime,jdbcType=TIMESTAMP}
+     )
+    </insert>
+
+    <update id="updateRoute" parameterType="com.ycl.gateway.bean.GatewayBean">
+        update gateway.gateway_route
+        <set>
+            <if test="routeUrl!= null and routeUrl != ''">
+                route_url=#{routeUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="routeOrder!= null">
+                route_order= #{routeOrder,jdbcType=INTEGER},
+            </if>
+            <if test="isEbl!= null">
+                is_ebl= #{isEbl,jdbcType=INTEGER},
+            </if>
+            <if test="isDel!= null ">
+                is_del= #{isDel,jdbcType=INTEGER},
+            </if>
+            <if test="predicates!= null and predicates != ''">
+                predicates= #{predicates,jdbcType=VARCHAR},
+            </if>
+            <if test="filters!= null and filters != ''">
+                filters= #{filters,jdbcType=VARCHAR},
+            </if>
+            <if test="routeAuthor!= null and routeAuthor != ''">
+                route_author= #{routeAuthor,jdbcType=VARCHAR},
+            </if>
+            <if test="routeName!= null and routeName != ''">
+                route_name= #{routeName,jdbcType=VARCHAR},
+            </if>
+            <if test="nodeId!= null and nodeId != ''">
+                node_id= #{nodeId,jdbcType=VARCHAR},
+            </if>
+            <if test="nodeName!= null and nodeName != ''">
+                node_name= #{nodeName,jdbcType=VARCHAR},
+            </if>
+            <if test="parentNodeId!= null and parentNodeId != ''">
+                parent_node_id= #{parentNodeId,jdbcType=VARCHAR},
+            </if>
+            <if test="orderNum!= null  and orderNum!=0">
+                order_num= #{orderNum,jdbcType=INTEGER},
+            </if>
+            <if test="createTime!= null ">
+                create_time= #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime!= null ">
+                update_time=#{updateTime,jdbcType=TIMESTAMP}
+            </if>
+        </set>
+        where route_id=#{routeId,jdbcType=VARCHAR}
+
+
+    </update>
+
+
+</mapper>
+

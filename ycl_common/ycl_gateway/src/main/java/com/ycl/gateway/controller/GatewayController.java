@@ -27,7 +27,11 @@ public class GatewayController {
     @Autowired
     GatewayService gatewayService;
 
-
+    /**
+     * 刷新路由信息，从数据库中刷新到路由信息中
+     *
+     * @return 成功与否
+     */
     @ApiOperation("刷新路由，从数据库刷新到路由表，原则是不支持直接操作路由表")
     @GetMapping(value = mappinfPath + "/refresh")
     public ReturnMsg refreshRoutes() {
@@ -38,9 +42,6 @@ public class GatewayController {
             return MessageBulider.failed("刷新路由失败", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-
-
 
 
 }
